@@ -17,10 +17,6 @@ var player;
 var ball;
 var img;
 
-function preload(){
-  img = loadImage("hexagon (1).png");
-
-}
 
 function setup() {
   createCanvas(1500,600);
@@ -69,8 +65,7 @@ function setup() {
 
   player = new Player(50,200,30,30);
 
-  ball = Bodies.circle(50,200,20);
-  World.add(world,ball);
+  
 
   sling = new Chain(this.ball,{x:150, y:160});
 
@@ -121,8 +116,7 @@ function draw() {
   ground2.display();
   ground3.display();
 
-  imageMode(CENTER);
-  image(img,ball.position.x,ball.position.y,40,40);
+ 
 
   sling.display();
 }
@@ -138,9 +132,7 @@ function mouseReleased(){
 }
 
 function keyPressed(){
-	if(keyCode === 32)
-	{
-		Matter.Body.setPosition(player.body,{x:235, y:420})
-		chain.attach(player.body);
+	if(keyCode === 32){
+	chain.attach(player.body);
 	}
 }
