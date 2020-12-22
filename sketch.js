@@ -21,7 +21,7 @@ var img;
 function setup() {
   createCanvas(1500,600);
   engine = Engine.create();
-    world = engine.world;
+    world = Engine.World;
 
 
   block1 = new Block(600,260,30,40);
