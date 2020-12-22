@@ -1,9 +1,8 @@
-const Engine = Matter.Engine;
-const World= Matter.World;
-const Bodies = Matter.Bodies;
-const Constraint = Matter.Constraint;
+ Engine = Matter.Engine;
+ World= Matter.World;
+ Bodies = Matter.Bodies;
+ Constraint = Matter.Constraint;
 
-var engine, world;
 var block1, block2, block3, block4, block5, block6, block7, block8, block9;
 var block10,block11,block12, block13, block14;
 var player;
