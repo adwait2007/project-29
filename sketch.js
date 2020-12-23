@@ -136,11 +136,3 @@ function mouseDragged(){
 function mouseReleased(){
   sling.fly();
 }
-
-function keyPressed(){
-	
-		if(keyCode===32){
-    
-      attach.Launch(stones.body);
-    }
-}
