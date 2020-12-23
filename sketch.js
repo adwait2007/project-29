@@ -6,13 +6,12 @@ const Constraint = Matter.Constraint;
 var engine, world;
 var block1, block2, block3, block4, block5, block6, block7, block8, block9;
 var block10,block11,block12, block13, block14;
-var player;
 var ground1, ground2, ground3;
 
 var block15, block16, block17, block18, block19, block20, block21;
 var block22;
 var sling;
-var player;
+
 
 var ball;
 var img;
@@ -67,7 +66,7 @@ function setup() {
 
   block22 = new Block(900,110,30,40);
 
-  player = new Player(50,200,30,30);
+ 
 
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
