@@ -1,8 +1,9 @@
- Engine = Matter.Engine;
- World= Matter.World;
- Bodies = Matter.Bodies;
- Constraint = Matter.Constraint;
+const Engine = Matter.Engine;
+const World= Matter.World;
+const Bodies = Matter.Bodies;
+const Constraint = Matter.Constraint;
 
+var engine, world;
 var block1, block2, block3, block4, block5, block6, block7, block8, block9;
 var block10,block11,block12, block13, block14;
 var player;
@@ -16,11 +17,15 @@ var player;
 var ball;
 var img;
 
+function preload(){
+  img = loadImage("hexagon (1).png");
+
+}
 
 function setup() {
   createCanvas(1500,600);
   engine = Engine.create();
-    world = Engine.World;
+    world = engine.world;
 
 
   block1 = new Block(600,260,30,40);
@@ -64,7 +69,8 @@ function setup() {
 
   player = new Player(50,200,30,30);
 
-  
+  ball = Bodies.circle(50,200,20);
+  World.add(world,ball);
 
   sling = new Chain(this.ball,{x:150, y:160});
 
@@ -82,13 +88,13 @@ function draw() {
   block4.display();
   block5.display();
 
-  fill("pink");
+  fill("lightBlue");
   block6.display();
   block7.display();
   block8.display();
   block9.display();
 
-  fill("lightBlue");
+  fill("lightPink");
   bolck10.display();
   block11.display();
   block12.display();
@@ -115,7 +121,8 @@ function draw() {
   ground2.display();
   ground3.display();
 
- 
+  imageMode(CENTER);
+  image(img,ball.position.x,ball.position.y,40,40);
 
   sling.display();
 }
@@ -131,7 +138,9 @@ function mouseReleased(){
 }
 
 function keyPressed(){
-	if(keyCode === 32){
-	chain.attach(player.body);
-	}
+	
+		if(keyCode===32){
+    
+      attach.Launch(stones.body);
+    }
 }
